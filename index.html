@@ -1,48 +1,173 @@
 <!doctype html>
+<! -- TODO: create a custom Spell theme and apply it to my slides. Learn all the reveal.js goodies. -->
 <html>
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-		<title>reveal.js</title>
-
-		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
-
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/monokai.css">
-
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+		<link rel="stylesheet" href="css/theme/spell.css" id="theme">		
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-markdown>
+					<textarea data-template>
+						<img src="static/logo.png" style="width:100px;"/>
+
+						### Machine Learning Project Scoping
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						Observation 1: model development projects follow a well-defined performance curve.
+					</textarea>
+				</section>
+				<!-- <section data-markdown>
+					<textarea data-template>
+						![](static/galaxy.png)
+					</textarea>
+				</section> -->
+				<section data-markdown>
+					<textarea data-template>
+						![](static/galaxy-competition-score-curve.png)
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						![](static/cost-of-perf.png)
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						Observation 2: model performance on a novel dataset is impossible to forecast.
+					</textarea>
+				</section>
+				<section>
+					<section data-markdown>
+						<textarea data-template>
+							In the influential 2014 paper (["Hidden Technical Debt in Machine Learning Systems"](https://papers.nips.cc/paper/5656-hidden-technical-debt-in-machine-learning-systems.pdf)) a group of Google engineers coined the CACE principle:<b>changing anything changes everything</b>.
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							<span style="color:lightgray">In the influential 2014 paper ("Hidden Technical Debt in Machine Learning Systems") a group of Google engineers coined the CACE principle:</span> <b>changing anything changes everything</b>.
+
+							This is the source of most of the complexity in practical machine learning systems!
+						</textarea>
+					</section>	
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						Some machine learning problems are intrinsically hard.
+
+						<img src="static/hard-problem.png" style="width:66%;"/>
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						Some machine learning problems are intrinsically easy.
+
+						<img src="static/easy-problem.png" style="width:66%;"/>
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						![](static/competition-percentiles.png)
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						Project scoping is a hard problem in software.
+
+						It's even harder in ML.
+					</textarea>
+				</section>
+				<section>
+					<section data-markdown>
+						<textarea data-template>
+							### Tip 1
+							<p>
+								Separate the project into <b>explorate</b> and <b>implement</b> phases.
+							</p>
+							<p>
+								Use explore time to estimate project cost.
+							</p>
+							<br/><br/>
+
+							[h/t "Doing Freelance Data Consulting in 2019"](https://www.ethanrosenthal.com/2020/01/08/freelance-ds-consulting/)
+						</textarea>
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						<textarea data-template>
+							### Tip 2
+
+							Collect human and model performance benchmarks on the dataset.
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							![](static/paperswithcode.png)
+						</textarea>
+						<!-- <span class="article-reference">
+							<a href="https://paperswithcode.com/">PapersWithCode</a>
+						</span> -->
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							![](static/karpathy-compete-against-nn.png)
+						</textarea>
+						<!-- <span class="article-reference">
+							<a href="https://karpathy.github.io/2014/09/02/what-i-learned-from-competing-against-a-convnet-on-imagenet/">Andrej Karpathy, "What I Learned From Competiing Against a Convnet on Imagenet"</a>
+						</span> -->
+					</section>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						### Tip 3
+
+						Negotiate performance breakpoints with stakeholders ahead of time.
+
+						What is "good enough"? What is "great"? This is typically a business decision.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						### Tip 4
+
+						Keep updating your time cost estimate as you proceed.
+						
+						Keep in contact with stakeholders and make sure they understand that performance improvements will be a non-linear.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						### Tip 5
+
+						Have a library (or a zoo!) of well-optimized models you're comfortable using.
+					</textarea>
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+						![](static/noahs-cat.png)
+
+						@residentmario
+					</textarea>
+				</section>
 			</div>
 		</div>
-
 		<script src="js/reveal.js"></script>
-
+		<!-- This section configures plugins. -->
 		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
 				hash: true,
+				transition: 'slide',
 				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/highlight/highlight.js' },
-					{ src: 'plugin/notes/notes.js', async: true }
+					// Enables markdown in slides, using the <section data-markdown><textarea data-template></></> construction.
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 				]
 			});
 		</script>
